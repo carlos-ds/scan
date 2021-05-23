@@ -15,11 +15,17 @@
     <p>To scan any type of barcode (QR, codabar, ...), allow for this website to access your camera. A video stream from your webcam will automatically be displayed at the bottom of this page. If a result is found, it will be displayed below.</p>
     <div id="scanResult">
     </div>
-    <div style="text-align: center;
-">
+    <div style="text-align: center">
       Last result: <span id="lastResult">-</span>
     </div>
     <video autoplay="true" id="webcamStream"></video>
+    <h2>Considerations</h2>
+    <p>When scanning, be sure to take the following considerations (freely copied from the <a href="https://github.com/schmich/instascan/blob/master/README.md" target="_blank" rel="noopener">Instascan readme</a>) into account:</p>
+    <ul>
+      <li>Keep barcodes as horizontal as possible when scanning.</li>
+      <li>Scan in an environment with normal light conditions. Avoid direct sunlight or overly dark environments.</li>
+      <li>Cameras with auto-focus make detection more difficult.</li>
+    </ul>
   </div>
   <script type="text/javascript" src="https://unpkg.com/@zxing/browser@latest"></script>
   <script type="text/javascript" src="./js/app.js"></script>
