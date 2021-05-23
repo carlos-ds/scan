@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>Scanner</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel="stylesheet">
+  <link href="./css/main.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Barcode scanner</h1>
+    <p>To scan any type of barcode (QR, codabar, ...), allow for this website to access your camera. A video stream from your webcam will automatically be displayed at the bottom of this page. If a result is found, it will be displayed below.</p>
+    <div id="scanResult">
+    </div>
+    <div style="text-align: center;
+">
+      Last result: <span id="lastResult">-</span>
+    </div>
+    <video autoplay="true" id="webcamStream"></video>
+  </div>
+  <script type="text/javascript" src="https://unpkg.com/@zxing/browser@latest"></script>
+  <script type="text/javascript" src="./js/app.js"></script>
+</body>
+</html>
