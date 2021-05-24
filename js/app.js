@@ -8,6 +8,8 @@ window.addEventListener('load', async () => {
       const webcamStream = document.getElementById('webcamStream');
       webcamStream.srcObject = stream;
 
+      scanResult.classList.add('border');
+
       const codeReader = new ZXingBrowser.BrowserMultiFormatReader();
       codeReader.decodeFromVideoElement(webcamStream, (result, error, controls) => {
         scanResult.classList.remove('success');
@@ -26,7 +28,7 @@ window.addEventListener('load', async () => {
     }
   } catch (error) {
     console.log(error);
-    scanResult.textContent = 'Something went wrong. Please refresh the page and try again.';
+    scanResult.innerHTML = 'Something went wrong. Please refresh the page and try again.<br>Make sure this page has access to your camera.';
     scanResult.classList.remove(['success', 'active']);
     scanResult.classList.add('failure');
   }
