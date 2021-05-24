@@ -1,3 +1,8 @@
+:root {
+  --success-color: 82, 255, 82;
+  --failure-color: 255, 82, 82;
+}
+
 * {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-bottom: 2rem;
@@ -24,60 +29,45 @@ li {
   width: 100%; 
   padding: 1rem 0; 
   border-radius: 2rem;
-  border: 1px solid rgba(82, 255, 82, 1);
+  border: none;
   text-align: center;
   font-weight: bold;
 }
 
+#scanResult.border {
+  border: 1px solid rgba(var(--success-color), 1);
+}
+
 /* shamelessly plugged from https://www.florin-pop.com/blog/2019/03/css-pulse-effect/ */
 #scanResult.active {
-  border: 1px solid rgba(82, 255, 82, 1);
-  box-shadow: 0 0 0 0 rgba(82, 255, 82, 1);
-  animation: pulse-red 2s infinite;
+  border: 1px solid rgba(var(--success-color), 1);
+  box-shadow: 0 0 0 0 rgba(var(--success-color), 1);
+  animation: pulse-green 2s infinite;
 }
 
 #scanResult.failure {
-  border: 1px solid rgba(255, 82, 82, 1); 
+  border: 1px solid rgba(var(--failure-color), 1); 
 }
 
-@keyframes pulse-red {
+@keyframes pulse-green {
   0% {
-    box-shadow: 0 0 0 0 rgba(82, 255, 82, 0.7);
+    box-shadow: 0 0 0 0 rgba(var(--success-color), 0.7);
   }
   
   70% {
-    box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+    box-shadow: 0 0 0 10px rgba(var(--success-color), 0);
   }
   
   100% {
-    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+    box-shadow: 0 0 0 0 rgba(var(--success-color), 0);
   }
 }
 
 #scanResult.success {
-  background: rgba(82, 255, 82, 1);
+  background: rgba(var(--success-color), 1);
   opacity: 0.7;
 }
 
 #webcamStream {
   width: 100%;
-}
-
-
-
-@keyframes pulse-white {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-  }
-  
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-  }
-  
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-  }
 }
